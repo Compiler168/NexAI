@@ -58,6 +58,21 @@
         .accordion.active .accordion-icon { transform: rotate(180deg); color: var(--accent-primary); }
         .cta-section { background: var(--bg-card); border-radius: var(--radius-2xl); padding: var(--space-16) var(--space-8); text-align: center; position: relative; overflow: hidden; border: 1px solid var(--border-glass); }
         .testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color); }
+        .featured-card { position: relative; overflow: hidden; padding: var(--space-8); text-align: center; border: 1px solid rgba(59,130,246,0.15); background: linear-gradient(135deg, rgba(30,41,59,0.95), rgba(15,23,42,0.98)); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .featured-card:hover { transform: translateY(-8px); border-color: rgba(59,130,246,0.4); box-shadow: 0 25px 60px rgba(59,130,246,0.15), 0 0 40px rgba(59,130,246,0.08); }
+        .featured-card-glow { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(59,130,246,0.06) 0%, transparent 60%); opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+        .featured-card:hover .featured-card-glow { opacity: 1; }
+        .featured-icon-wrap { position: relative; width: 80px; height: 80px; margin: 0 auto var(--space-6); }
+        .featured-icon-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(59,130,246,0.2); animation: pulse-ring 3s ease-in-out infinite; }
+        @keyframes pulse-ring { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.15); opacity: 0; } }
+        .featured-icon { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(37,99,235,0.25)); color: var(--accent-secondary); display: flex; align-items: center; justify-content: center; font-size: 32px; position: relative; z-index: 1; backdrop-filter: blur(10px); border: 1px solid rgba(59,130,246,0.2); }
+        .featured-card:hover .featured-icon { background: linear-gradient(135deg, rgba(59,130,246,0.25), rgba(37,99,235,0.4)); box-shadow: 0 0 30px rgba(59,130,246,0.3); }
+        .featured-card-title { font-size: 1.375rem; margin-bottom: var(--space-3); color: var(--text-primary); font-weight: 700; }
+        .featured-card-desc { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: var(--space-6); }
+        .featured-cta { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-secondary); font-weight: 600; font-size: 0.9375rem; transition: all 0.3s ease; padding: 10px 24px; border-radius: var(--radius-full); background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.15); }
+        .featured-cta:hover { background: rgba(59,130,246,0.15); color: #93bbfc; transform: translateX(4px); border-color: rgba(59,130,246,0.3); }
+        .featured-cta i { font-size: 16px; transition: transform 0.3s ease; }
+        .featured-cta:hover i { transform: translateX(4px); }
     </style>
 </head>
 <body>
@@ -137,23 +152,35 @@
                 <p>We transform traditional businesses into AI-first organizations with cutting-edge automation.</p>
             </div>
             <div class="grid grid-3">
-                <div class="card reveal-scale stagger-1">
-                    <div class="service-icon"><i class="ph ph-chat-circle"></i></div>
-                    <h3 style="margin-bottom:var(--space-3);">AI Agents & Chatbots</h3>
-                    <p>Custom LLM-powered agents that handle customer support, sales inquiries, and internal knowledge retrieval 24/7.</p>
-                    <a href="services.html" class="btn btn-outline" style="margin-top:var(--space-4);">Learn More</a>
+                <div class="card featured-card reveal-scale stagger-1">
+                    <div class="featured-card-glow"></div>
+                    <div class="featured-icon-wrap">
+                        <div class="featured-icon-ring"></div>
+                        <div class="featured-icon"><i class="ph ph-chat-circle"></i></div>
+                    </div>
+                    <h3 class="featured-card-title">AI Agents & Chatbots</h3>
+                    <p class="featured-card-desc">Custom LLM-powered agents that handle customer support, sales inquiries, and internal knowledge retrieval 24/7.</p>
+                    <a href="services.html" class="featured-cta">Explore Solution <i class="ph ph-arrow-right"></i></a>
                 </div>
-                <div class="card reveal-scale stagger-2">
-                    <div class="service-icon"><i data-lucide="workflow"></i></div>
-                    <h3 style="margin-bottom:var(--space-3);">Workflow Automation</h3>
-                    <p>Connect your existing SaaS stack to automate data entry, lead processing, and reporting with precision.</p>
-                    <a href="services.html" class="btn btn-outline" style="margin-top:var(--space-4);">Learn More</a>
+                <div class="card featured-card reveal-scale stagger-2">
+                    <div class="featured-card-glow"></div>
+                    <div class="featured-icon-wrap">
+                        <div class="featured-icon-ring"></div>
+                        <div class="featured-icon"><i class="ph ph-flow-arrow"></i></div>
+                    </div>
+                    <h3 class="featured-card-title">Workflow Automation</h3>
+                    <p class="featured-card-desc">Connect your existing SaaS stack to automate data entry, lead processing, and reporting with precision.</p>
+                    <a href="services.html" class="featured-cta">Explore Solution <i class="ph ph-arrow-right"></i></a>
                 </div>
-                <div class="card reveal-scale stagger-3">
-                    <div class="service-icon"><i data-lucide="bar-chart-3"></i></div>
-                    <h3 style="margin-bottom:var(--space-3);">Predictive Analytics</h3>
-                    <p>Leverage machine learning to forecast trends, optimize inventory, and make data-driven strategic decisions.</p>
-                    <a href="services.html" class="btn btn-outline" style="margin-top:var(--space-4);">Learn More</a>
+                <div class="card featured-card reveal-scale stagger-3">
+                    <div class="featured-card-glow"></div>
+                    <div class="featured-icon-wrap">
+                        <div class="featured-icon-ring"></div>
+                        <div class="featured-icon"><i class="ph ph-chart-bar"></i></div>
+                    </div>
+                    <h3 class="featured-card-title">Predictive Analytics</h3>
+                    <p class="featured-card-desc">Leverage machine learning to forecast trends, optimize inventory, and make data-driven strategic decisions.</p>
+                    <a href="services.html" class="featured-cta">Explore Solution <i class="ph ph-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -172,19 +199,19 @@
                 <div class="reveal-right">
                     <div class="feature-grid">
                         <div class="feature-item">
-                            <div class="feature-icon"><i class="ph ph-shield-check" style="width:22px;"></i></div>
+                            <div class="feature-icon"><i class="ph ph-shield-check" style="font-size:22px;"></i></div>
                             <div><h4 style="margin-bottom:var(--space-1);font-size:1rem;">Enterprise Security</h4><p style="font-size:0.875rem;margin:0;">SOC2, GDPR, and HIPAA compliant solutions with zero-data-retention AI.</p></div>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon"><i data-lucide="plug" style="width:22px;"></i></div>
+                            <div class="feature-icon"><i class="ph ph-plug" style="font-size:22px;"></i></div>
                             <div><h4 style="margin-bottom:var(--space-1);font-size:1rem;">Custom Integrations</h4><p style="font-size:0.875rem;margin:0;">Seamless connections to your existing CRM, ERP, and SaaS tools.</p></div>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon"><i data-lucide="activity" style="width:22px;"></i></div>
+                            <div class="feature-icon"><i class="ph ph-pulse" style="font-size:22px;"></i></div>
                             <div><h4 style="margin-bottom:var(--space-1);font-size:1rem;">24/7 Monitoring</h4><p style="font-size:0.875rem;margin:0;">Proactive monitoring with real-time alerts and automatic failover.</p></div>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon"><i data-lucide="layers" style="width:22px;"></i></div>
+                            <div class="feature-icon"><i class="ph ph-stack" style="font-size:22px;"></i></div>
                             <div><h4 style="margin-bottom:var(--space-1);font-size:1rem;">Scalable Architecture</h4><p style="font-size:0.875rem;margin:0;">Cloud-native infrastructure that grows with your business.</p></div>
                         </div>
                     </div>
@@ -219,7 +246,7 @@
             <div class="grid grid-2">
                 <div class="card reveal-left">
                     <div style="display:flex;gap:4px;color:#fbbf24;margin-bottom:var(--space-4);">
-                        <i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i>
+                        <i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i>
                     </div>
                     <p style="font-size:1.125rem;font-weight:500;color:var(--text-primary);font-style:italic;line-height:1.7;">"NexAI completely transformed our customer service operations. Their custom AI agent handles 70% of our tier 1 support tickets, reducing resolution time from 4 hours to 2 minutes."</p>
                     <div class="flex items-center gap-4" style="margin-top:var(--space-6);">
@@ -229,7 +256,7 @@
                 </div>
                 <div class="card reveal-right">
                     <div style="display:flex;gap:4px;color:#fbbf24;margin-bottom:var(--space-4);">
-                        <i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i><i data-lucide="star" fill="#fbbf24" style="width:18px;"></i>
+                        <i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i><i class="ph-fill ph-star" style="font-size:18px;color:#fbbf24;"></i>
                     </div>
                     <p style="font-size:1.125rem;font-weight:500;color:var(--text-primary);font-style:italic;line-height:1.7;">"The workflow automation they built for our data entry team saved us over $120k in the first year alone. The ROI was apparent within the first 30 days of implementation."</p>
                     <div class="flex items-center gap-4" style="margin-top:var(--space-6);">
