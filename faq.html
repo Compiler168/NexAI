@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - NexAI Automation Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .page-header { padding: var(--space-32) 0 var(--space-16); text-align: center; position: relative; overflow: hidden; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-category { margin-bottom: var(--space-12); }
+        .faq-category-title { font-size: 1.5rem; color: var(--accent-primary); margin-bottom: var(--space-6); padding-bottom: var(--space-2); border-bottom: 1px solid var(--border-glass); }
+        .faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-4); transition: all var(--transition-fast); }
+        .faq-item:hover { border-color: rgba(99,102,241,0.3); }
+        .faq-item h4 { font-size: 1.125rem; margin-bottom: var(--space-2); display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4); cursor: pointer; }
+        .faq-item h4 i { color: var(--accent-primary); transition: transform var(--transition-fast); }
+        .faq-item.active h4 i { transform: rotate(180deg); }
+        .faq-answer { display: none; color: var(--text-secondary); margin: 0; font-size: 0.9375rem; padding-top: var(--space-4); margin-top: var(--space-4); border-top: 1px solid var(--border-glass); line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+        .cta-section { background: var(--bg-card); border-radius: var(--radius-2xl); padding: var(--space-16) var(--space-8); text-align: center; position: relative; overflow: hidden; border: 1px solid var(--border-glass); margin-top: var(--space-24); }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container nav"><a href="index.html" class="logo"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><nav class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><a href="book.html" class="btn btn-primary">Book Demo</a></nav><button class="mobile-menu-btn" aria-label="Open Menu"><i class="ph ph-list"></i></button></div></header>
+    <div class="mobile-overlay"></div><div class="mobile-menu"><button class="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><div style="margin-top:auto;"><a href="book.html" class="btn btn-primary" style="width:100%;">Book Demo</a></div></div>
+
+    <section class="page-header">
+        <div class="bg-glow animate-float" style="top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div class="container reveal">
+            <span class="subtitle">Help Center</span>
+            <h1 style="margin-bottom:var(--space-4);">Frequently Asked <span class="text-gradient">Questions</span></h1>
+            <p style="max-width:600px;margin:0 auto;font-size:1.25rem;">Everything you need to know about working with NexAI.</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container faq-container">
+            
+            <div class="faq-category reveal-scale">
+                <h3 class="faq-category-title">General & Services</h3>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <h4>What exactly does NexAI do? <i class="ph ph-caret-down"></i></h4>
+                    <div class="faq-answer">
+                        We build custom artificial intelligence systems and automated workflows for businesses. Instead of you having to learn how to use AI or hire developers, we act as your dedicated engineering team. We audit your business, identify where AI can save you time or money, and then build, deploy, and maintain those systems.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <h4>Do I need to be technically savvy to work with you? <i class="ph ph-caret-down"></i></h4>
+                    <div class="faq-answer">
+                        Not at all. We handle all the technical heavy lifting—from architecture and prompt engineering to API integration and deployment. Your role is simply to define the business problem and the desired outcome. We provide training for your team on how to interact with the finished systems.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category reveal-scale">
+                <h3 class="faq-category-title">Data Privacy & Security</h3>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <h4>Is my company data safe when using your AI agents? <i class="ph ph-caret-down"></i></h4>
+                    <div class="faq-answer">
+                        Yes. We build primarily using enterprise-grade APIs (like OpenAI's API, Anthropic, or open-source models). By default, enterprise API usage is <strong>not</strong> used to train future foundational models. Furthermore, we can deploy solutions on your own cloud infrastructure (AWS, Azure, GCP) to ensure data never leaves your environment.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <h4>Can you build HIPAA/SOC2 compliant systems? <i class="ph ph-caret-down"></i></h4>
+                    <div class="faq-answer">
+                        Yes. For healthcare, finance, or enterprise clients requiring strict compliance, we design specific architectures utilizing zero-retention policies, dedicated vector databases, and compliant infrastructure providers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category reveal-scale">
+                <h3 class="faq-category-title">Pricing & Timelines</h3>
+                
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <h4>How much does an AI project cost? <i class="ph ph-caret-down"></i></h4>
+                    <div class="faq-answer">
+                        Our projects typically range from $2,500 for foundational workflow automation up to $25,000+ for enterprise-grade custom agent deployments. We price on a flat-fee basis per project so you know exactly what you'll pay upfront. Check out our <a href="pricing.html" style="color:var(--accent-primary);">pricing page</a> for more details.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <h4>How long does it take to see results? <i class="ph ph-caret-down"></i></h4>
+                    <div class="faq-answer">
+                        Time-to-value is one of our core metrics. Basic automated workflows can be built and deployed in 1-2 weeks. Complex RAG (Retrieval-Augmented Generation) agents typically take 3-5 weeks to build, test, and deploy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section reveal-scale">
+                <div class="bg-glow" style="top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.15;"></div>
+                <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);position:relative;z-index:1;">Still have questions?</h2>
+                <p style="font-size:1.25rem;color:var(--text-secondary);max-width:600px;margin:0 auto var(--space-8);position:relative;z-index:1;">Our team is here to help. Reach out to us directly or schedule a free discovery call.</p>
+                <div style="display:flex;gap:var(--space-4);justify-content:center;position:relative;z-index:1;">
+                    <a href="book.html" class="btn btn-primary">Book Discovery Call</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="logo" style="margin-bottom:var(--space-4);"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><p style="max-width:300px;font-size:0.875rem;">Premium AI automation agency helping modern businesses scale through intelligent workflows and custom AI agents.</p></div><div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about-us.html" class="footer-link">About Us</a><a href="careers.html" class="footer-link">Careers</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div></div><div class="footer-col"><h4>Services</h4><div class="footer-links"><a href="services.html" class="footer-link">AI Chatbots</a><a href="services.html" class="footer-link">Workflow Automation</a><a href="solutions.html" class="footer-link">Industry Solutions</a><a href="pricing.html" class="footer-link">Pricing</a></div></div><div class="footer-col"><h4>Resources</h4><div class="footer-links"><a href="case-studies.html" class="footer-link">Case Studies</a><a href="portfolio.html" class="footer-link">Portfolio</a><a href="faq.html" class="footer-link">FAQ</a><a href="book.html" class="footer-link">Book a Demo</a></div></div></div><div class="footer-bottom"><p>&copy; 2026 NexAI Automation. All rights reserved.</p><div class="flex gap-4"><a href="https://twitter.com" target="_blank" class="footer-link"><i class="ph ph-twitter-logo" style="width:20px;"></i></a><a href="https://linkedin.com" target="_blank" class="footer-link"><i class="ph ph-linkedin-logo" style="width:20px;"></i></a><a href="https://github.com" target="_blank" class="footer-link"><i class="ph ph-github-logo" style="width:20px;"></i></a></div></div></div></footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
+
+

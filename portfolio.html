@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - NexAI Automation Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .page-header { padding: var(--space-32) 0 var(--space-16); text-align: center; position: relative; overflow: hidden; }
+        .filter-bar { display: flex; justify-content: center; gap: var(--space-3); margin-bottom: var(--space-12); flex-wrap: wrap; }
+        .filter-btn { padding: 0.6rem 1.5rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; border: 1px solid var(--border-color); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all var(--transition-fast); text-transform: uppercase; letter-spacing: 0.05em; }
+        .filter-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+        .filter-btn.active { background: var(--accent-primary); color: white; border-color: var(--accent-primary); box-shadow: 0 0 20px rgba(99,102,241,0.3); }
+        .portfolio-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+        @media(min-width:768px){ .portfolio-grid { grid-template-columns: repeat(2,1fr); } }
+        @media(min-width:1024px){ .portfolio-grid { grid-template-columns: repeat(3,1fr); } }
+        .portfolio-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-2xl); overflow: hidden; transition: all var(--transition-slow); }
+        .portfolio-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); border-color: rgba(99,102,241,0.3); }
+        .portfolio-card-image { height: 220px; overflow: hidden; }
+        .portfolio-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+        .portfolio-card:hover .portfolio-card-image img { transform: scale(1.08); }
+        .portfolio-card-body { padding: var(--space-6); }
+        .portfolio-card-body .badge { margin-bottom: var(--space-3); }
+        .portfolio-card-body h3 { font-size: 1.25rem; margin-bottom: var(--space-2); }
+        .portfolio-card-body .client { font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--space-3); }
+        .portfolio-card-body p { font-size: 0.9375rem; margin-bottom: var(--space-4); }
+        .portfolio-card.hidden { display: none; }
+        .cta-section { background: var(--bg-card); border-radius: var(--radius-2xl); padding: var(--space-16) var(--space-8); text-align: center; position: relative; overflow: hidden; border: 1px solid var(--border-glass); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link active">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a>
+                
+                <a href="book.html" class="btn btn-primary">Book Demo</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+        </div>
+    </header>
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <button class="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+        <a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link active">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a>
+        <div style="margin-top:auto;"><a href="book.html" class="btn btn-primary" style="width:100%;">Book Demo</a></div>
+    </div>
+
+    <section class="page-header">
+        <div class="bg-glow animate-float" style="top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div class="container reveal">
+            <span class="subtitle">Our Work</span>
+            <h1>Our <span class="text-gradient">Portfolio</span></h1>
+            <p style="max-width:600px;margin:var(--space-4) auto 0;">Real results from real AI implementations across industries.</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="filter-bar reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="agents">AI Agents</button>
+                <button class="filter-btn" data-filter="workflows">Workflows</button>
+                <button class="filter-btn" data-filter="analytics">Analytics</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card reveal-scale stagger-1" data-category="agents">
+                    <div class="portfolio-card-image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop" alt="AI Customer Support Agent"></div>
+                    <div class="portfolio-card-body"><span class="badge">AI Agents</span><h3>AI Customer Support Agent</h3><p class="client">TechFlow Inc.</p><p>Deployed an LLM-powered agent that handles 70% of tier-1 support tickets autonomously.</p><a href="case-studies.html" class="btn btn-outline" style="width:100%;">View Case Study</a></div>
+                </div>
+                <div class="portfolio-card reveal-scale stagger-2" data-category="workflows">
+                    <div class="portfolio-card-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Sales Pipeline Automation"></div>
+                    <div class="portfolio-card-body"><span class="badge">Workflows</span><h3>Sales Pipeline Automation</h3><p class="client">GlobalTech</p><p>Automated lead scoring, routing, and follow-up sequences saving 200+ hours per month.</p><a href="case-studies.html" class="btn btn-outline" style="width:100%;">View Case Study</a></div>
+                </div>
+                <div class="portfolio-card reveal-scale stagger-3" data-category="analytics">
+                    <div class="portfolio-card-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Predictive Revenue Model"></div>
+                    <div class="portfolio-card-body"><span class="badge">Analytics</span><h3>Predictive Revenue Model</h3><p class="client">FinanceFirst</p><p>Built a custom ML model that forecasts quarterly revenue with 94% accuracy.</p><a href="case-studies.html" class="btn btn-outline" style="width:100%;">View Case Study</a></div>
+                </div>
+                <div class="portfolio-card reveal-scale" data-category="agents">
+                    <div class="portfolio-card-image"><img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=600&auto=format&fit=crop" alt="Internal Knowledge Bot"></div>
+                    <div class="portfolio-card-body"><span class="badge">AI Agents</span><h3>Internal Knowledge Base Bot</h3><p class="client">MedCorp</p><p>RAG-powered agent that gives employees instant answers from 50,000+ internal documents.</p><a href="case-studies.html" class="btn btn-outline" style="width:100%;">View Case Study</a></div>
+                </div>
+                <div class="portfolio-card reveal-scale" data-category="workflows">
+                    <div class="portfolio-card-image"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop" alt="HR Onboarding Automation"></div>
+                    <div class="portfolio-card-body"><span class="badge">Workflows</span><h3>HR Onboarding Automation</h3><p class="client">PeopleFirst</p><p>Automated the entire employee onboarding process reducing time-to-productivity by 60%.</p><a href="case-studies.html" class="btn btn-outline" style="width:100%;">View Case Study</a></div>
+                </div>
+                <div class="portfolio-card reveal-scale" data-category="analytics">
+                    <div class="portfolio-card-image"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop" alt="Supply Chain Forecasting"></div>
+                    <div class="portfolio-card-body"><span class="badge">Analytics</span><h3>Supply Chain Forecasting</h3><p class="client">LogiCorp</p><p>Predictive model that reduced inventory waste by 35% and improved delivery timelines.</p><a href="case-studies.html" class="btn btn-outline" style="width:100%;">View Case Study</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-section reveal-scale">
+                <div class="bg-glow" style="top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.15;"></div>
+                <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);position:relative;z-index:1;">Want results like these?</h2>
+                <p style="font-size:1.25rem;color:var(--text-secondary);max-width:600px;margin:0 auto var(--space-8);position:relative;z-index:1;">Let's discuss how we can build a custom AI solution for your business.</p>
+                <a href="book.html" class="btn btn-primary" style="position:relative;z-index:1;">Schedule Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><a href="index.html" class="logo" style="margin-bottom:var(--space-4);"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><p style="max-width:300px;font-size:0.875rem;">Premium AI automation agency helping modern businesses scale through intelligent workflows and custom AI agents.</p></div>
+                <div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about-us.html" class="footer-link">About Us</a><a href="careers.html" class="footer-link">Careers</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div></div>
+                <div class="footer-col"><h4>Services</h4><div class="footer-links"><a href="services.html" class="footer-link">AI Chatbots</a><a href="services.html" class="footer-link">Workflow Automation</a><a href="solutions.html" class="footer-link">Industry Solutions</a><a href="pricing.html" class="footer-link">Pricing</a></div></div>
+                <div class="footer-col"><h4>Resources</h4><div class="footer-links"><a href="case-studies.html" class="footer-link">Case Studies</a><a href="portfolio.html" class="footer-link">Portfolio</a><a href="faq.html" class="footer-link">FAQ</a><a href="book.html" class="footer-link">Book a Demo</a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 NexAI Automation. All rights reserved.</p><div class="flex gap-4"><a href="https://twitter.com" target="_blank" class="footer-link"><i class="ph ph-twitter-logo" style="width:20px;"></i></a><a href="https://linkedin.com" target="_blank" class="footer-link"><i class="ph ph-linkedin-logo" style="width:20px;"></i></a><a href="https://github.com" target="_blank" class="footer-link"><i class="ph ph-github-logo" style="width:20px;"></i></a></div></div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.portfolio-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

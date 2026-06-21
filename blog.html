@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - NexAI Automation Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .page-header { padding: var(--space-32) 0 var(--space-16); text-align: center; position: relative; overflow: hidden; }
+        .blog-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+        @media(min-width:768px){ .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:1024px){ .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+        .blog-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-2xl); overflow: hidden; transition: all var(--transition-slow); display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); border-color: rgba(99,102,241,0.3); }
+        .blog-image { height: 200px; overflow: hidden; position: relative; }
+        .blog-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+        .blog-card:hover .blog-image img { transform: scale(1.05); }
+        .blog-category { position: absolute; top: var(--space-4); left: var(--space-4); background: rgba(3,3,3,0.8); backdrop-filter: blur(8px); color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid rgba(255,255,255,0.1); }
+        .blog-content { padding: var(--space-6); display: flex; flex-direction: column; flex-grow: 1; }
+        .blog-meta { display: flex; align-items: center; gap: var(--space-4); font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--space-3); }
+        .blog-title { font-size: 1.25rem; margin-bottom: var(--space-3); line-height: 1.4; transition: color var(--transition-fast); }
+        .blog-card:hover .blog-title { color: var(--accent-primary); }
+        .blog-excerpt { color: var(--text-secondary); font-size: 0.9375rem; margin-bottom: var(--space-6); flex-grow: 1; }
+        .blog-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; border-top: 1px solid var(--border-color); padding-top: var(--space-4); }
+        .read-more { color: var(--text-primary); font-weight: 600; font-size: 0.9375rem; display: inline-flex; align-items: center; gap: 4px; transition: color var(--transition-fast); }
+        .blog-card:hover .read-more { color: var(--accent-primary); }
+        .featured-post { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-2xl); overflow: hidden; transition: all var(--transition-slow); margin-bottom: var(--space-8); }
+        @media(min-width:768px){ .featured-post { grid-template-columns: 1.2fr 1fr; } }
+        .featured-post .blog-image { height: 300px; }
+        @media(min-width:768px){ .featured-post .blog-image { height: 100%; } }
+        .featured-post .blog-content { padding: var(--space-8); justify-content: center; }
+        .featured-post .blog-title { font-size: 2rem; margin-bottom: var(--space-4); }
+        .newsletter-section { background: rgba(99,102,241,0.05); border: 1px solid var(--border-glass); border-radius: var(--radius-2xl); padding: var(--space-12); text-align: center; margin-top: var(--space-24); }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container nav"><a href="index.html" class="logo"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><nav class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><a href="book.html" class="btn btn-primary">Book Demo</a></nav><button class="mobile-menu-btn" aria-label="Open Menu"><i class="ph ph-list"></i></button></div></header>
+    <div class="mobile-overlay"></div><div class="mobile-menu"><button class="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><div style="margin-top:auto;"><a href="book.html" class="btn btn-primary" style="width:100%;">Book Demo</a></div></div>
+
+    <section class="page-header">
+        <div class="bg-glow animate-float" style="top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div class="container reveal">
+            <span class="subtitle">Insights</span>
+            <h1 style="margin-bottom:var(--space-4);">The NexAI <span class="text-gradient">Blog</span></h1>
+            <p style="max-width:600px;margin:0 auto;font-size:1.25rem;">Actionable strategies, technical deep dives, and the future of enterprise automation.</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Featured Post -->
+                <a href="#" class="featured-post reveal-scale" style="text-decoration:none;color:inherit;">
+                    <div class="blog-image">
+                        <span class="blog-category">Strategy</span>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Featured Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta"><span>May 12, 2026</span><span>8 min read</span></div>
+                        <h2 class="blog-title">Why Agentic Workflows Will Replace Traditional SaaS Apps</h2>
+                        <p class="blog-excerpt">We are moving from an era where humans operate software, to an era where software operates software. Learn how agentic workflows are fundamentally restructuring how businesses scale operations.</p>
+                        <div class="blog-footer" style="border:none;padding:0;">
+                            <span class="read-more">Read Article <i class="ph ph-arrow-right" style="width:16px;"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Standard Posts -->
+                <a href="#" class="blog-card reveal-scale stagger-1" style="text-decoration:none;color:inherit;">
+                    <div class="blog-image">
+                        <span class="blog-category">Engineering</span>
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta"><span>May 05, 2026</span><span>5 min read</span></div>
+                        <h3 class="blog-title">Building Resilient RAG Pipelines for Enterprise Data</h3>
+                        <p class="blog-excerpt">Hallucinations are unacceptable in enterprise environments. Discover the architecture we use to guarantee 99.9% accuracy in our custom LLM deployments.</p>
+                        <div class="blog-footer"><span class="read-more">Read Article <i class="ph ph-arrow-right" style="width:16px;"></i></span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card reveal-scale stagger-2" style="text-decoration:none;color:inherit;">
+                    <div class="blog-image">
+                        <span class="blog-category">Case Study</span>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta"><span>April 28, 2026</span><span>4 min read</span></div>
+                        <h3 class="blog-title">How Logistics Firm Slashed Data Entry by 94%</h3>
+                        <p class="blog-excerpt">A deep dive into the Make.com and OpenAI architecture that saved GlobalTech over 200 hours of manual labor per month.</p>
+                        <div class="blog-footer"><span class="read-more">Read Article <i class="ph ph-arrow-right" style="width:16px;"></i></span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card reveal-scale stagger-3" style="text-decoration:none;color:inherit;">
+                    <div class="blog-image">
+                        <span class="blog-category">Opinion</span>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta"><span>April 15, 2026</span><span>6 min read</span></div>
+                        <h3 class="blog-title">The Role of Human Oversight in the Age of Autonomy</h3>
+                        <p class="blog-excerpt">AI shouldn't replace your team; it should elevate them. We discuss the concept of "human-in-the-loop" and why it's critical for high-stakes automation.</p>
+                        <div class="blog-footer"><span class="read-more">Read Article <i class="ph ph-arrow-right" style="width:16px;"></i></span></div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter-section reveal-scale">
+                <h2 style="margin-bottom:var(--space-4);">Subscribe to our Newsletter</h2>
+                <p style="color:var(--text-secondary);max-width:500px;margin:0 auto var(--space-8);">Get one email a month with our latest technical deep dives and automation strategies. No spam, ever.</p>
+                <form class="flex" style="max-width:400px;margin:0 auto;gap:var(--space-2);" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:#22c55e;font-weight:600;margin:0 auto;\'>Thanks for subscribing!</p>';">
+                    <input type="email" placeholder="Enter your email" class="form-control" style="flex-grow:1;" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="logo" style="margin-bottom:var(--space-4);"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><p style="max-width:300px;font-size:0.875rem;">Premium AI automation agency helping modern businesses scale through intelligent workflows and custom AI agents.</p></div><div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about-us.html" class="footer-link">About Us</a><a href="careers.html" class="footer-link">Careers</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div></div><div class="footer-col"><h4>Services</h4><div class="footer-links"><a href="services.html" class="footer-link">AI Chatbots</a><a href="services.html" class="footer-link">Workflow Automation</a><a href="solutions.html" class="footer-link">Industry Solutions</a><a href="pricing.html" class="footer-link">Pricing</a></div></div><div class="footer-col"><h4>Resources</h4><div class="footer-links"><a href="case-studies.html" class="footer-link">Case Studies</a><a href="portfolio.html" class="footer-link">Portfolio</a><a href="faq.html" class="footer-link">FAQ</a><a href="book.html" class="footer-link">Book a Demo</a></div></div></div><div class="footer-bottom"><p>&copy; 2026 NexAI Automation. All rights reserved.</p><div class="flex gap-4"><a href="https://twitter.com" target="_blank" class="footer-link"><i class="ph ph-twitter-logo" style="width:20px;"></i></a><a href="https://linkedin.com" target="_blank" class="footer-link"><i class="ph ph-linkedin-logo" style="width:20px;"></i></a><a href="https://github.com" target="_blank" class="footer-link"><i class="ph ph-github-logo" style="width:20px;"></i></a></div></div></div></footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
+
+

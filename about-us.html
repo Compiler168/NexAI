@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NexAI Automation Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .page-header { padding: var(--space-32) 0 var(--space-16); text-align: center; position: relative; overflow: hidden; }
+        .story-section { background: rgba(99,102,241,0.04); border: 1px solid var(--border-glass); border-radius: var(--radius-2xl); padding: var(--space-12); margin-bottom: var(--space-24);
+            background-image: linear-gradient(rgba(3,3,3,0.92),rgba(3,3,3,0.95)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1500&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        [data-theme="light"] .story-section { background-image: linear-gradient(rgba(248,250,252,0.95),rgba(248,250,252,0.98)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1500&auto=format&fit=crop'); }
+        .team-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+        @media(min-width:768px){ .team-grid { grid-template-columns: repeat(3,1fr); } }
+        .team-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-2xl); overflow: hidden; text-align: center; padding: var(--space-8); transition: all var(--transition-slow); }
+        .team-card:hover { transform: translateY(-8px); border-color: var(--accent-primary); box-shadow: var(--shadow-xl); }
+        .team-avatar { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto var(--space-4); overflow: hidden; border: 3px solid var(--border-color); }
+        .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .team-role { font-size: 0.875rem; color: var(--accent-primary); font-weight: 600; margin-bottom: var(--space-4); }
+        .team-socials { display: flex; justify-content: center; gap: var(--space-3); margin-top: var(--space-4); }
+        .team-socials a { color: var(--text-muted); transition: color var(--transition-fast); }
+        .team-socials a:hover { color: var(--accent-primary); }
+        .values-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+        @media(min-width:768px){ .values-grid { grid-template-columns: repeat(3,1fr); } }
+        .value-card { text-align: center; padding: var(--space-8); background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-2xl); transition: all var(--transition-slow); }
+        .value-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .value-icon { width: 64px; height: 64px; border-radius: var(--radius-lg); background: rgba(99,102,241,0.08); color: var(--accent-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4); }
+        .cta-section { background: var(--bg-card); border-radius: var(--radius-2xl); padding: var(--space-16) var(--space-8); text-align: center; position: relative; overflow: hidden; border: 1px solid var(--border-glass); }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container nav"><a href="index.html" class="logo"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><nav class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><a href="book.html" class="btn btn-primary">Book Demo</a></nav><button class="mobile-menu-btn" aria-label="Open Menu"><i class="ph ph-list"></i></button></div></header>
+    <div class="mobile-overlay"></div><div class="mobile-menu"><button class="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><div style="margin-top:auto;"><a href="book.html" class="btn btn-primary" style="width:100%;">Book Demo</a></div></div>
+
+    <section class="page-header">
+        <div class="bg-glow animate-float" style="top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div class="container reveal">
+            <span class="subtitle">About NexAI</span>
+            <h1>Architecting the <span class="text-gradient">Automated Enterprise</span></h1>
+            <p style="max-width:600px;margin:var(--space-4) auto 0;">A team of engineers, researchers, and strategists dedicated to making AI accessible and actionable.</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="story-section reveal-scale">
+                <div class="grid grid-2" style="align-items:center;gap:var(--space-12);">
+                    <div>
+                        <span class="subtitle">Our Story</span>
+                        <h2 style="margin-bottom:var(--space-4);">From theory to execution.</h2>
+                        <p>NexAI was founded in 2024 by former infrastructure engineers who saw a massive gap between the capabilities of AI models and how businesses actually operated.</p>
+                        <p>While tech giants fought over model benchmarks, traditional enterprises were still doing manual data entry and losing millions to inefficiencies.</p>
+                        <p>We built NexAI to bridge this gap. We don't train foundational models—we apply them. We build the agents, workflows, and logic that allow normal businesses to harness artificial intelligence.</p>
+                    </div>
+                    <div style="text-align:center;"><i class="ph ph-git-merge" style="width:120px;height:120px;color:var(--accent-primary);opacity:0.7;" class="animate-float"></i></div>
+                </div>
+            </div>
+
+            <div class="section-header reveal"><span class="subtitle">Leadership</span><h2>Meet the Team</h2></div>
+            <div class="team-grid">
+                <div class="team-card reveal-scale stagger-1">
+                    <div class="team-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=250&auto=format&fit=crop" alt="Alex Mercer"></div>
+                    <h3 style="font-size:1.25rem;margin-bottom:0.25rem;">Alex Mercer</h3>
+                    <p class="team-role">CEO & Founder</p>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);">Former Cloud Architect. Obsessed with operational efficiency and scalable infrastructure.</p>
+                    <div class="team-socials"><a href="https://twitter.com" target="_blank"><i class="ph ph-twitter-logo" style="width:18px;"></i></a><a href="https://linkedin.com" target="_blank"><i class="ph ph-linkedin-logo" style="width:18px;"></i></a></div>
+                </div>
+                <div class="team-card reveal-scale stagger-2">
+                    <div class="team-avatar"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=250&auto=format&fit=crop" alt="Dr. Elena Rostova"></div>
+                    <h3 style="font-size:1.25rem;margin-bottom:0.25rem;">Dr. Elena Rostova</h3>
+                    <p class="team-role">Head of AI Engineering</p>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);">Ph.D. in Machine Learning. Leads our custom agent development and model fine-tuning.</p>
+                    <div class="team-socials"><a href="https://twitter.com" target="_blank"><i class="ph ph-twitter-logo" style="width:18px;"></i></a><a href="https://linkedin.com" target="_blank"><i class="ph ph-linkedin-logo" style="width:18px;"></i></a><a href="https://github.com" target="_blank"><i class="ph ph-github-logo" style="width:18px;"></i></a></div>
+                </div>
+                <div class="team-card reveal-scale stagger-3">
+                    <div class="team-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=250&auto=format&fit=crop" alt="Marcus Chen"></div>
+                    <h3 style="font-size:1.25rem;margin-bottom:0.25rem;">Marcus Chen</h3>
+                    <p class="team-role">VP Operations & Strategy</p>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);">Zapier & Make.com wizard. Translates complex business problems into automated workflows.</p>
+                    <div class="team-socials"><a href="https://twitter.com" target="_blank"><i class="ph ph-twitter-logo" style="width:18px;"></i></a><a href="https://linkedin.com" target="_blank"><i class="ph ph-linkedin-logo" style="width:18px;"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header reveal"><span class="subtitle">What Drives Us</span><h2>Our Core Values</h2></div>
+            <div class="values-grid">
+                <div class="value-card reveal-scale stagger-1"><div class="value-icon"><i class="ph ph-lightbulb" style="width:28px;"></i></div><h3 style="font-size:1.25rem;margin-bottom:var(--space-3);">Innovation First</h3><p style="font-size:0.9375rem;">We stay at the bleeding edge of AI, constantly experimenting with new models and architectures.</p></div>
+                <div class="value-card reveal-scale stagger-2"><div class="value-icon"><i class="ph ph-heart" style="width:28px;"></i></div><h3 style="font-size:1.25rem;margin-bottom:var(--space-3);">Client Obsessed</h3><p style="font-size:0.9375rem;">Your success is our success. We measure ourselves by the ROI we deliver to your business.</p></div>
+                <div class="value-card reveal-scale stagger-3"><div class="value-icon"><i class="ph ph-target" style="width:28px;"></i></div><h3 style="font-size:1.25rem;margin-bottom:var(--space-3);">Results Driven</h3><p style="font-size:0.9375rem;">We don't sell hype. Every engagement starts with clear KPIs and ends with measurable outcomes.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-section reveal-scale">
+                <div class="bg-glow" style="top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.15;"></div>
+                <h2 style="margin-bottom:var(--space-4);position:relative;z-index:1;">Want to join our mission?</h2>
+                <p style="color:var(--text-secondary);max-width:500px;margin:0 auto var(--space-8);position:relative;z-index:1;">We're always looking for exceptional talent to push the boundaries of applied AI.</p>
+                <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
+                    <a href="careers.html" class="btn btn-primary">View Open Positions</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="logo" style="margin-bottom:var(--space-4);"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><p style="max-width:300px;font-size:0.875rem;">Premium AI automation agency helping modern businesses scale through intelligent workflows and custom AI agents.</p></div><div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about-us.html" class="footer-link">About Us</a><a href="careers.html" class="footer-link">Careers</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div></div><div class="footer-col"><h4>Services</h4><div class="footer-links"><a href="services.html" class="footer-link">AI Chatbots</a><a href="services.html" class="footer-link">Workflow Automation</a><a href="solutions.html" class="footer-link">Industry Solutions</a><a href="pricing.html" class="footer-link">Pricing</a></div></div><div class="footer-col"><h4>Resources</h4><div class="footer-links"><a href="case-studies.html" class="footer-link">Case Studies</a><a href="portfolio.html" class="footer-link">Portfolio</a><a href="faq.html" class="footer-link">FAQ</a><a href="book.html" class="footer-link">Book a Demo</a></div></div></div><div class="footer-bottom"><p>&copy; 2026 NexAI Automation. All rights reserved.</p><div class="flex gap-4"><a href="https://twitter.com" target="_blank" class="footer-link"><i class="ph ph-twitter-logo" style="width:20px;"></i></a><a href="https://linkedin.com" target="_blank" class="footer-link"><i class="ph ph-linkedin-logo" style="width:20px;"></i></a><a href="https://github.com" target="_blank" class="footer-link"><i class="ph ph-github-logo" style="width:20px;"></i></a></div></div></div></footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - NexAI Automation Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .page-header { padding: var(--space-32) 0 var(--space-16); text-align: center; position: relative; overflow: hidden; }
+        .benefits-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); margin-bottom: var(--space-24); }
+        @media(min-width:768px){ .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:1024px){ .benefits-grid { grid-template-columns: repeat(4, 1fr); } }
+        .benefit-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-6); text-align: center; transition: transform var(--transition-fast); }
+        .benefit-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); }
+        .benefit-icon { width: 48px; height: 48px; background: rgba(99,102,241,0.1); color: var(--accent-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4); }
+        .jobs-list { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-4); }
+        .job-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); transition: all var(--transition-slow); text-decoration: none; color: inherit; }
+        @media(min-width:768px){ .job-card { flex-direction: row; align-items: center; justify-content: space-between; } }
+        .job-card:hover { border-color: var(--accent-primary); box-shadow: var(--shadow-lg); transform: translateX(5px); }
+        .job-info h3 { font-size: 1.25rem; margin-bottom: var(--space-2); transition: color var(--transition-fast); }
+        .job-card:hover .job-info h3 { color: var(--accent-primary); }
+        .job-tags { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+        .job-tag { font-size: 0.8125rem; padding: 2px 10px; border-radius: var(--radius-full); background: rgba(255,255,255,0.05); color: var(--text-secondary); border: 1px solid var(--border-glass); }
+        .cta-section { background: var(--bg-card); border-radius: var(--radius-2xl); padding: var(--space-16) var(--space-8); text-align: center; position: relative; overflow: hidden; border: 1px solid var(--border-glass); margin-top: var(--space-24); }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container nav"><a href="index.html" class="logo"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><nav class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><a href="book.html" class="btn btn-primary">Book Demo</a></nav><button class="mobile-menu-btn" aria-label="Open Menu"><i class="ph ph-list"></i></button></div></header>
+    <div class="mobile-overlay"></div><div class="mobile-menu"><button class="close-menu-btn" aria-label="Close Menu"><i class="ph ph-x"></i></button><a href="index.html" class="nav-link">Home</a><a href="services.html" class="nav-link">Services</a><a href="solutions.html" class="nav-link">Solutions</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="pricing.html" class="nav-link">Pricing</a><div style="margin-top:auto;"><a href="book.html" class="btn btn-primary" style="width:100%;">Book Demo</a></div></div>
+
+    <section class="page-header">
+        <div class="bg-glow animate-float" style="top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div class="container reveal">
+            <span class="subtitle">Join the Team</span>
+            <h1 style="margin-bottom:var(--space-4);">Build the Future of <span class="text-gradient">Work</span></h1>
+            <p style="max-width:600px;margin:0 auto;font-size:1.25rem;">We're looking for exceptional engineers, strategists, and problem solvers to join our fully remote team.</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            
+            <div class="section-header reveal"><span class="subtitle">Why NexAI?</span><h2>Perks & Benefits</h2></div>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal-scale stagger-1"><div class="benefit-icon"><i class="ph ph-globe"></i></div><h3 style="font-size:1.125rem;margin-bottom:var(--space-2);">100% Remote</h3><p style="font-size:0.875rem;color:var(--text-secondary);margin:0;">Work from anywhere in the world. We care about output, not office hours.</p></div>
+                <div class="benefit-card reveal-scale stagger-2"><div class="benefit-icon"><i class="ph ph-laptop"></i></div><h3 style="font-size:1.125rem;margin-bottom:var(--space-2);">Latest Hardware</h3><p style="font-size:0.875rem;color:var(--text-secondary);margin:0;">$3,000 stipend for your home office setup and the latest MacBook Pro.</p></div>
+                <div class="benefit-card reveal-scale stagger-3"><div class="benefit-icon"><i class="ph ph-book-open"></i></div><h3 style="font-size:1.125rem;margin-bottom:var(--space-2);">Learning Budget</h3><p style="font-size:0.875rem;color:var(--text-secondary);margin:0;">$2,000 annual budget for courses, conferences, and API credits for side projects.</p></div>
+                <div class="benefit-card reveal-scale stagger-4"><div class="benefit-icon"><i class="ph ph-heart"></i></div><h3 style="font-size:1.125rem;margin-bottom:var(--space-2);">Premium Health</h3><p style="font-size:0.875rem;color:var(--text-secondary);margin:0;">Comprehensive medical, dental, and vision coverage for you and your dependents.</p></div>
+            </div>
+
+            <div class="section-header reveal"><span class="subtitle">Open Positions</span><h2>Join Us</h2></div>
+            <div class="jobs-list">
+                
+                <a href="contact.html" class="job-card reveal-scale">
+                    <div class="job-info">
+                        <h3>AI / Prompt Engineer</h3>
+                        <div class="job-tags"><span class="job-tag"><i class="ph ph-map-pin" style="width:12px;display:inline;margin-right:4px;"></i>Remote (US/EU)</span><span class="job-tag">Full-Time</span><span class="job-tag">Engineering</span></div>
+                    </div>
+                    <div class="btn btn-outline" style="padding:0.5rem 1rem;">Apply Now</div>
+                </a>
+
+                <a href="contact.html" class="job-card reveal-scale stagger-1">
+                    <div class="job-info">
+                        <h3>Workflow Automation Specialist (Make.com)</h3>
+                        <div class="job-tags"><span class="job-tag"><i class="ph ph-map-pin" style="width:12px;display:inline;margin-right:4px;"></i>Remote (Global)</span><span class="job-tag">Full-Time</span><span class="job-tag">Operations</span></div>
+                    </div>
+                    <div class="btn btn-outline" style="padding:0.5rem 1rem;">Apply Now</div>
+                </a>
+
+                <a href="contact.html" class="job-card reveal-scale stagger-2">
+                    <div class="job-info">
+                        <h3>Python Backend Developer</h3>
+                        <div class="job-tags"><span class="job-tag"><i class="ph ph-map-pin" style="width:12px;display:inline;margin-right:4px;"></i>Remote (US/EU)</span><span class="job-tag">Full-Time</span><span class="job-tag">Engineering</span></div>
+                    </div>
+                    <div class="btn btn-outline" style="padding:0.5rem 1rem;">Apply Now</div>
+                </a>
+
+                <a href="contact.html" class="job-card reveal-scale stagger-3">
+                    <div class="job-info">
+                        <h3>B2B Technical Sales Executive</h3>
+                        <div class="job-tags"><span class="job-tag"><i class="ph ph-map-pin" style="width:12px;display:inline;margin-right:4px;"></i>Remote (US Only)</span><span class="job-tag">Full-Time</span><span class="job-tag">Sales</span></div>
+                    </div>
+                    <div class="btn btn-outline" style="padding:0.5rem 1rem;">Apply Now</div>
+                </a>
+
+            </div>
+
+            <div class="cta-section reveal-scale">
+                <div class="bg-glow" style="top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.15;"></div>
+                <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:var(--space-4);position:relative;z-index:1;">Don't see a fit?</h2>
+                <p style="font-size:1.25rem;color:var(--text-secondary);max-width:600px;margin:0 auto var(--space-8);position:relative;z-index:1;">We're always looking for exceptional talent. Send us your resume and tell us how you can help.</p>
+                <a href="contact.html" class="btn btn-primary" style="position:relative;z-index:1;">Send Open Application</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><a href="index.html" class="logo" style="margin-bottom:var(--space-4);"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a><p style="max-width:300px;font-size:0.875rem;">Premium AI automation agency helping modern businesses scale through intelligent workflows and custom AI agents.</p></div><div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about-us.html" class="footer-link">About Us</a><a href="careers.html" class="footer-link">Careers</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div></div><div class="footer-col"><h4>Services</h4><div class="footer-links"><a href="services.html" class="footer-link">AI Chatbots</a><a href="services.html" class="footer-link">Workflow Automation</a><a href="solutions.html" class="footer-link">Industry Solutions</a><a href="pricing.html" class="footer-link">Pricing</a></div></div><div class="footer-col"><h4>Resources</h4><div class="footer-links"><a href="case-studies.html" class="footer-link">Case Studies</a><a href="portfolio.html" class="footer-link">Portfolio</a><a href="faq.html" class="footer-link">FAQ</a><a href="book.html" class="footer-link">Book a Demo</a></div></div></div><div class="footer-bottom"><p>&copy; 2026 NexAI Automation. All rights reserved.</p><div class="flex gap-4"><a href="https://twitter.com" target="_blank" class="footer-link"><i class="ph ph-twitter-logo" style="width:20px;"></i></a><a href="https://linkedin.com" target="_blank" class="footer-link"><i class="ph ph-linkedin-logo" style="width:20px;"></i></a><a href="https://github.com" target="_blank" class="footer-link"><i class="ph ph-github-logo" style="width:20px;"></i></a></div></div></div></footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
+
+
