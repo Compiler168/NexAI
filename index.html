@@ -20,22 +20,47 @@
             display: flex;
             align-items: center;
             position: relative;
-            padding-top: var(--space-24);
+            padding-top: var(--space-20);
+            padding-bottom: var(--space-12);
             overflow: hidden;
             background-image: linear-gradient(to bottom, rgba(3,3,3,0.6), rgba(3,3,3,0.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+        @media(min-width:768px) {
+            .hero {
+                padding-top: var(--space-28);
+                padding-bottom: var(--space-16);
+            }
+        }
         [data-theme="light"] .hero {
             background-image: linear-gradient(to bottom, rgba(248,250,252,0.7), rgba(248,250,252,0.98)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop');
         }
         .hero-content { max-width: 800px; margin: 0 auto; text-align: center; z-index: 1; position: relative; }
-        .hero-title { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: var(--space-6); letter-spacing: -0.04em; }
-        .hero-subtitle { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: var(--space-8); max-width: 600px; margin-inline: auto; }
+        .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: var(--space-4); letter-spacing: -0.04em; }
+        @media(min-width:768px) {
+            .hero-title {
+                margin-bottom: var(--space-6);
+            }
+        }
+        .hero-subtitle { font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--space-6); max-width: 600px; margin-inline: auto; }
+        @media(min-width:768px) {
+            .hero-subtitle {
+                font-size: 1.25rem;
+                margin-bottom: var(--space-8);
+            }
+        }
         .hero-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-        .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--space-6); margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--border-glass); }
-        @media(min-width:768px){ .stats-grid { grid-template-columns: repeat(4,1fr); } }
+        .stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border-glass); }
+        @media(min-width:768px){
+            .stats-grid {
+                grid-template-columns: repeat(4,1fr);
+                gap: var(--space-6);
+                margin-top: var(--space-16);
+                padding-top: var(--space-8);
+            }
+        }
         .stat-item h3 { font-size: 2.5rem; color: var(--text-primary); margin-bottom: var(--space-2); }
         .stat-item p { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin: 0; }
         .trust-section { padding: var(--space-12) 0; border-bottom: 1px solid var(--border-glass); }
@@ -48,7 +73,7 @@
         .feature-icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: rgba(99,102,241,0.08); color: var(--accent-primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .process-step { text-align: center; position: relative; }
         .process-number { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto var(--space-6); box-shadow: var(--shadow-glow); }
-        @media(min-width:768px){ .process-step:not(:last-child)::after { content:''; position:absolute; top:32px; right:-50%; width:100%; height:2px; background:var(--border-glass); z-index:-1; } }
+        @media(min-width:1024px){ .process-step:not(:last-child)::after { content:''; position:absolute; top:32px; right:-50%; width:100%; height:2px; background:var(--border-glass); z-index:-1; } }
         .accordion { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); margin-bottom: var(--space-4); overflow: hidden; transition: all var(--transition-normal); }
         .accordion:hover { border-color: rgba(99,102,241,0.4); }
         .accordion-header { padding: var(--space-6); display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 1.0625rem; }
@@ -79,7 +104,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container nav">
-            <a href="index.html" class="logo"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a>
+            <a href="index.html" class="logo"><i class="ph ph-cpu logo-icon"></i> NexAI</a>
             <nav class="nav-links">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="services.html" class="nav-link">Services</a>
@@ -310,7 +335,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="margin-bottom:var(--space-4);"><i class="ph ph-cpu" class="logo-icon"></i> NexAI</a>
+                    <a href="index.html" class="logo" style="margin-bottom:var(--space-4);"><i class="ph ph-cpu logo-icon"></i> NexAI</a>
                     <p style="max-width:300px;font-size:0.875rem;">Premium AI automation agency helping modern businesses scale through intelligent workflows and custom AI agents.</p>
                 </div>
                 <div class="footer-col">
